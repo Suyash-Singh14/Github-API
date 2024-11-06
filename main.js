@@ -17,6 +17,10 @@ button.addEventListener("click", ()=>{
     fetch(URL).then((val)=>{
         return val.json();
     }).then((data)=>{
+        console.log(data);
+        if(data.name==undefined){
+            Name.innerHTML = "This user doesn't exist!";
+        }
         Name.innerHTML = `${data.name}`;
         Bio.innerHTML = `${data.bio}`;
         Loc.innerHTML = `${data.location}`;
